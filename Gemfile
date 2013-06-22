@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+group :development do
+  gem 'mysql2'
+end
+group :production do
+  gem 'pg'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -35,3 +41,33 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'bootstrap-sass'
+gem 'cancan'
+gem 'devise'
+gem 'figaro'
+gem 'haml-rails'
+gem 'rolify'
+gem 'simple_form'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
+  gem 'html2haml'
+  gem 'hub', :require=>nil
+  gem 'quiet_assets'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'cucumber-rails', :require=>false
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'launchy'
+end
+
